@@ -1,0 +1,375 @@
+<!-- =================================================================-->
+<!-- |    Created by RILAB teamoon jeong 22.11.22                    | -->
+<!-- |    We made it from ROBOTIS-THORMANG xacro file                | -->
+<!-- |    This robot discription is THORMANG version 3               | -->
+<!-- |    https://github.com/ROBOTIS-GIT/ROBOTIS-THORMANG-Common     | -->
+<!-- ================================================================= -->
+<mujoco model="thormang_rilab">
+    <compiler coordinate="local" angle="radian" meshdir="Meshes/"/>
+    <size njmax="500" nconmax="100" />
+    <default>
+		<!-- <site type="sphere" size="0.005"/> -->
+		<joint limited="true" damping="0.1"/>
+		<geom group="0" contype="0" conaffinity="0" margin="0.001" type="mesh"/>
+		<motor ctrlrange="-.95 .95"/>
+        <default class="viz">
+			<geom group="1" contype="1" conaffinity="1" margin="0.001" type="mesh" rgba=".6 .6 .7 1"/>
+		</default>
+	</default>
+    <asset>
+        <mesh name="pelvis_link"            file="robotis_pelvis_link.stl" scale="0.001 0.001 0.001"/>
+		<mesh name="chest_link"             file="robotis_chest_link.stl" scale="0.001 0.001 0.001"/>
+		<mesh name="l_arm_sh_p1_link"       file="robotis_l_arm_sh_p1_link.stl" scale="0.001 0.001 0.001"/>
+		<mesh name="l_arm_sh_r_link"        file="robotis_l_arm_sh_r_link.stl" scale="0.001 0.001 0.001"/>
+		<mesh name="l_arm_sh_p2_link"         file="robotis_l_arm_sh_p2_link.stl" scale="0.001 0.001 0.001"/>
+		<mesh name="l_arm_el_y_link"         file="robotis_l_arm_el_y_link.stl" scale="0.001 0.001 0.001"/>
+		<mesh name="l_arm_wr_r_link"         file="robotis_l_arm_wr_r_link.stl" scale="0.001 0.001 0.001"/>
+		<mesh name="l_arm_wr_y_link"         file="robotis_l_arm_wr_y_link.stl" scale="0.001 0.001 0.001"/>
+		<mesh name="l_arm_wr_p_link"         file="robotis_l_arm_wr_p_link.stl" scale="0.001 0.001 0.001"/>
+		<mesh name="l_arm_grip_link"			file="robotis_l_arm_grip_link.stl" scale="0.001 0.001 0.001"/>
+		<mesh name="l_arm_grip_1_link"           file="robotis_l_arm_grip_1_link.stl" scale="0.001 0.001 0.001"/>
+		<mesh name="r_arm_sh_p1_link"    file="robotis_r_arm_sh_p1_link.stl" scale="0.001 0.001 0.001"/>
+		<mesh name="r_arm_sh_r_link"         file="robotis_r_arm_sh_r_link.stl" scale="0.001 0.001 0.001"/>
+		<mesh name="r_arm_sh_p2_link"         file="robotis_r_arm_sh_p2_link.stl" scale="0.001 0.001 0.001"/>
+		<mesh name="r_arm_el_y_link"         file="robotis_r_arm_el_y_link.stl" scale="0.001 0.001 0.001"/>
+		<mesh name="r_arm_wr_r_link"         file="robotis_r_arm_wr_r_link.stl" scale="0.001 0.001 0.001"/>
+		<mesh name="r_arm_wr_y_link"         file="robotis_r_arm_wr_y_link.stl" scale="0.001 0.001 0.001"/>
+		<mesh name="r_arm_wr_p_link"         file="robotis_r_arm_wr_p_link.stl" scale="0.001 0.001 0.001"/>
+		<mesh name="r_arm_grip_link"        file="robotis_r_arm_grip_link.stl" scale="0.001 0.001 0.001"/>
+		<mesh name="r_arm_grip_1_link"        file="robotis_r_arm_grip_1_link.stl" scale="0.001 0.001 0.001"/>
+        
+        <mesh name="l_leg_hip_y_link"        file="robotis_l_leg_hip_y_link.stl" scale="0.001 0.001 0.001"/>
+		<mesh name="l_leg_hip_r_link"         file="robotis_l_leg_hip_r_link.stl" scale="0.001 0.001 0.001"/>
+		<mesh name="l_leg_hip_p_link"         file="robotis_l_leg_hip_p_link.stl" scale="0.001 0.001 0.001"/>
+		<mesh name="l_leg_kn_p_link"        file="robotis_l_leg_kn_p_link.stl" scale="0.001 0.001 0.001"/>
+		<mesh name="l_leg_an_p_link"         file="robotis_l_leg_an_p_link.stl" scale="0.001 0.001 0.001"/>
+		<mesh name="l_leg_an_r_link"        file="robotis_l_leg_an_r_link.stl" scale="0.001 0.001 0.001"/>
+		<mesh name="l_leg_foot_link"        file="robotis_l_leg_foot.stl" scale="0.001 0.001 0.001"/>
+		
+        <mesh name="r_leg_hip_y_link"         file="robotis_r_leg_hip_y_link.stl" scale="0.001 0.001 0.001"/>
+		<mesh name="r_leg_hip_r_link"         file="robotis_r_leg_hip_r_link.stl" scale="0.001 0.001 0.001"/>
+		<mesh name="r_leg_hip_p_link"        file="robotis_r_leg_hip_p_link.stl" scale="0.001 0.001 0.001"/>
+		<mesh name="r_leg_kn_p_link"         file="robotis_r_leg_kn_p_link.stl" scale="0.001 0.001 0.001"/>	
+        <mesh name="r_leg_an_p_link"         file="robotis_r_leg_an_p_link.stl" scale="0.001 0.001 0.001"/>
+		<mesh name="r_leg_an_r_link"        file="robotis_r_leg_an_r_link.stl" scale="0.001 0.001 0.001"/>
+		<mesh name="r_leg_foot_link"         file="robotis_r_leg_foot.stl" scale="0.001 0.001 0.001"/>
+        
+        <mesh name="head_y_link"         file="robotis_head_y_link.stl" scale="0.001 0.001 0.001"/>
+        <mesh name="head_p_link"         file="robotis_head_p_link.stl" scale="0.001 0.001 0.001"/>
+        
+		<texture name="groundplane" type="2d" builtin="checker" rgb1=".25 .26 .25" 
+			rgb2=".22 .22 .22" width="100" height="100" mark="none" markrgb=".8 .8 .8"/>
+		<material name="MatGnd" texture="groundplane"  texrepeat="20 20" specular="1" shininess=".3" reflectance="0.00001" rgba="1 1 1 1"/>
+    </asset>
+    <option timestep="0.001"/>
+	<visual>
+        <map fogstart="2" fogend="4"/>
+    </visual>
+    <worldbody>
+		<light directional="true" cutoff="60" exponent="1" diffuse="1 1 1" specular=".1 .1 .1" pos="1 1 1.5" dir="-1 -1 -1.3"/>
+		<geom name="ground" type="plane" pos="0 0 0" size="10 10 1" conaffinity="1" contype="1" material="MatGnd"/>
+        <body name="pelvis_link" pos="0 0 0.9" quat="-1 0 0 1">
+            <!-- <joint type="free" limited='false' damping="0" stiffness="0" armature="0"/> -->
+            <inertial pos="-0.011 0 0.058" mass="6.869" diaginertia="1 1 1" />
+            <!-- <geom size="0.1 0.125 0.085" pos="-0.01 0 0.07" type="box" rgba="1 0 0 0.1"/> -->
+            <geom class="viz" mesh="pelvis_link" />
+            <body name="chest_link" pos="0 0 0.1705">
+                <inertial pos="-0.007 0 0.109" mass="5.383" diaginertia="1 1 1" />
+                <joint name="torso_y" pos="0 0 0" axis="0 0 1" limited="true" range="-1.88496 1.88496" damping="0.1" />
+                <!-- <geom size="0.1 0.125 0.115" pos="-0.01 0 0.11" type="box" rgba="1 0 0 0.1"/> -->
+                <geom class="viz" mesh="chest_link" />
+                <body name="l_arm_sh_p1_link" pos="0 0.152 0.16">
+                    <inertial pos="-0.003 0.02 -0.005" mass="0.194" diaginertia="1 1 1" />
+                    <joint name="l_arm_sh_p1" pos="0 0 0" axis="0 1 0" limited="true" range="-1.570796 1.570796" damping="0.1" />
+                    <!-- <geom size="0.075 0.05 0.045" pos="0 0.03 -0.01" type="box" rgba="1 0 0 0.1"/> -->
+                    <geom class="viz" mesh="l_arm_sh_p1_link" />
+                    <body name="l_arm_sh_r_link" pos="0.057 0.06 -0.039">
+                        <inertial pos="-0.06 0.002 0" mass="0.875" diaginertia="1 1 1" />
+                        <joint name="l_arm_sh_r" pos="0 0 0" axis="-1 0 0" limited="true" range="-1.570796 1.570796" damping="0.1" />
+                        <!-- <geom size="0.07 0.045 0.045" pos="-0.057 0 0" type="box" rgba="1 0 0 0.1"/> -->
+                        <geom class="viz" mesh="l_arm_sh_r_link" />
+                        <body name="l_arm_sh_p2_link" pos="-0.057 0.033 0">
+                            <inertial pos="0 0.073 0" mass="1.122" diaginertia="1 1 1" />
+                            <joint name="l_arm_sh_p2" pos="0 0 0" axis="0 1 0" limited="true" range="-1.570796 1.570796" damping="0.1" />
+                            <!-- <geom size="0.05 0.12 0.065" pos="0.01 0.11 0" type="box" rgba="1 0 0 0.1"/> -->
+                            <geom class="viz" mesh="l_arm_sh_p2_link" />
+                            <body name="l_arm_el_y_link" pos="0.03 0.187 0.057">
+                                <inertial pos="0.042 0.012 -0.058" mass="1.357" diaginertia="1 1 1" />
+                                <joint name="l_arm_el_y" pos="0 0 0" axis="0 0 -1" limited="true" range="-1.2566368 1.2566368" damping="0.1" />
+                                <!-- <geom size="0.085 0.05 0.04" pos="0.08 0.01 -0.057" type="box" rgba="1 0 0 0.1"/> -->
+                                <geom class="viz" mesh="l_arm_el_y_link" />
+                                <body name="l_arm_wr_r_link" pos="0.171 0.03 -0.057">
+                                    <inertial pos="0.01 0 0.002" mass="0.087" diaginertia="1 1 1" />
+                                    <joint name="l_arm_wr_r" pos="0 0 0" axis="1 0 0" limited="true" range="-2.8274328 2.8274328" damping="0.1" />
+                                    <!-- <geom size="0.025 0.025 0.055" pos="0.02 0 0" type="box" rgba="1 0 0 0.1"/> -->
+                                    <geom class="viz" mesh="l_arm_wr_r_link" />
+                                    <body name="l_arm_wr_y_link" pos="0.039 0 0.045">
+                                        <inertial pos="0.023 0.001 -0.046" mass="0.768" diaginertia="1 1 1" />
+                                        <joint name="l_arm_wr_y" pos="0 0 0" axis="0 0 -1" limited="true" range="-1.4137164 1.4137164" damping="0.1" />
+                                        <!-- <geom size="0.045 0.05 0.045" pos="0.03 0 -0.045" type="box" rgba="1 0 0 0.1"/> -->
+                                        <geom class="viz" mesh="l_arm_wr_y_link" />
+                                        <body name="l_arm_wr_p_link" pos="0.045 -0.045 -0.045">
+                                            <inertial pos="0.0651413 0.045 0" quat="0.5 0.5 0.5 0.5" mass="0.566" diaginertia="2.00001 2.00001 2" />
+                                            <joint name="l_arm_wr_p" pos="0 0 0" axis="0 -1 0" limited="true" range="-1.4137164 1.4137164" damping="0.1" />
+                                            <!-- <geom size="0.035 0.05 0.03" pos="0.07 0.045 0" type="box" rgba="1 0 0 0.1"/> -->
+                                            <!-- <geom size="0.12 0.05 0.03" pos="0.07 0.045 0" type="box" rgba="1 0 0 0.1"/> -->
+                                            <geom class="viz" mesh="l_arm_wr_p_link" />
+                                            <body name="l_arm_grip_link" pos="0.0877 0.0583 0" quat="-0.909297 0 0 -0.416147">
+                                                <inertial pos="0.031 0.014 0" mass="0.013" diaginertia="1 1 1" />
+                                                <joint name="l_arm_grip" pos="0 0 0" axis="0 0 -1" limited="true" range="0 1.13" damping="0.1" />
+                                                <geom class="viz" mesh="l_arm_grip_link" />
+                                            </body>
+                                            <body name="l_arm_grip_1_link" pos="0.0877 0.0317 0" quat="-0.909297 0 0 0.416147">
+                                                <inertial pos="0.031 -0.014 0" mass="0.013" diaginertia="1 1 1" />
+                                                <joint name="l_arm_grip_1" pos="0 0 0" axis="0 0 1" limited="true" range="0 1.13" damping="0.1" />
+                                                <geom class="viz" mesh="l_arm_grip_1_link" />
+                                            </body>
+                                        </body>
+                                    </body>
+                                </body>
+                            </body>
+                        </body>
+                    </body>
+                </body>
+                <body name="r_arm_sh_p1_link" pos="0 -0.152 0.16">
+                    <inertial pos="-0.003 -0.02 -0.005" mass="0.194" diaginertia="1 1 1" />
+                    <joint name="r_arm_sh_p1" pos="0 0 0" axis="0 -1 0" limited="true" range="-1.570796 1.570796" damping="0.1" />
+                    <!-- <geom size="0.075 0.05 0.045" pos="0 -0.03 -0.01" type="box" rgba="1 0 0 0.1"/> -->
+                    <geom class="viz" mesh="r_arm_sh_p1_link" />
+                    <body name="r_arm_sh_r_link" pos="0.057 -0.06 -0.039">
+                        <inertial pos="-0.06 -0.002 0" mass="0.875" diaginertia="1 1 1" />
+                        <joint name="r_arm_sh_r" pos="0 0 0" axis="-1 0 0" limited="true" range="-1.570796 1.570796" damping="0.1" />
+                        <!-- <geom size="0.07 0.045 0.045" pos="-0.057 0 0" type="box" rgba="1 0 0 0.1"/> -->
+                        <geom class="viz" mesh="r_arm_sh_r_link" />
+                        <body name="r_arm_sh_p2_link" pos="-0.057 -0.033 0">
+                            <inertial pos="0 -0.073 0" mass="1.122" diaginertia="1 1 1" />
+                            <joint name="r_arm_sh_p2" pos="0 0 0" axis="0 -1 0" limited="true" range="-1.570796 1.570796" damping="0.1" />
+                            <!-- <geom size="0.05 0.12 0.065" pos="0.01 -0.11 0" type="box" rgba="1 0 0 0.1"/> -->
+                            <geom class="viz" mesh="r_arm_sh_p2_link" />
+                            <body name="r_arm_el_y_link" pos="0.03 -0.187 0.057">
+                                <inertial pos="0.042 -0.012 -0.058" mass="1.357" diaginertia="1 1 1" />
+                                <joint name="r_arm_el_y" pos="0 0 0" axis="0 0 -1" limited="true" range="-1.25836 1.25836" damping="0.1" />
+                                <!-- <geom size="0.085 0.05 0.04" pos="0.08 -0.01 -0.057" type="box" rgba="1 0 0 0.1"/> -->
+                                <geom class="viz" mesh="r_arm_el_y_link" />
+                                <body name="r_arm_wr_r_link" pos="0.171 -0.03 -0.057">
+                                    <inertial pos="0.01 0 -0.002" mass="0.087" diaginertia="1 1 1" />
+                                    <joint name="r_arm_wr_r" pos="0 0 0" axis="1 0 0" limited="true" range="-2.8274328 2.8274328" damping="0.1" />
+                                    <!-- <geom size="0.025 0.025 0.055" pos="0.02 0 0" type="box" rgba="1 0 0 0.1"/> -->
+                                    <geom class="viz" mesh="r_arm_wr_r_link" />
+                                    <body name="r_arm_wr_y_link" pos="0.039 0 0.045">
+                                        <inertial pos="0.023 -0.001 -0.046" mass="0.768" diaginertia="1 1 1" />
+                                        <joint name="r_arm_wr_y" pos="0 0 0" axis="0 0 -1" limited="true" range="-1.4137164 1.4137164" damping="0.1" />
+                                        <!-- <geom size="0.045 0.05 0.045" pos="0.03 0 -0.045" type="box" rgba="1 0 0 0.1"/> -->
+                                        <geom class="viz" mesh="r_arm_wr_y_link" />
+                                        <body name="r_arm_wr_p_link" pos="0.045 0.045 -0.045">
+                                            <inertial pos="0.0651413 -0.045 0" quat="0.5 0.5 0.5 0.5" mass="0.566" diaginertia="2.00001 2.00001 2" />
+                                            <joint name="r_arm_wr_p" pos="0 0 0" axis="0 1 0" limited="true" range="-1.4137164 1.4137164" damping="0.1" />
+                                            <!-- <geom size="0.035 0.05 0.03" pos="0.07 -0.045 0" type="box" rgba="1 0 0 0.1"/> -->
+                                            <!-- <geom size="0.12 0.05 0.03" pos="0.07 -0.045 0" type="box" rgba="1 0 0 0.1"/> -->
+                                            <geom class="viz" mesh="r_arm_wr_p_link" />
+                                            <body name="r_arm_grip_link" pos="0.0877 -0.0583 0" quat="0 0.909297 -0.416147 0">
+                                                <inertial pos="0.031 -0.014 0" mass="0.013" diaginertia="1 1 1" />
+                                                <joint name="r_arm_grip" pos="0 0 0" axis="0 0 -1" limited="true" range="0 1.13" damping="0.1" />
+                                                <geom class="viz" mesh="r_arm_grip_link" />
+                                            </body>
+                                            <body name="r_arm_grip_1_link" pos="0.0877 -0.0317 0" quat="0 0.909297 0.416147 0">
+                                                <inertial pos="0.031 0.014 0" mass="0.013" diaginertia="1 1 1" />
+                                                <joint name="r_arm_grip_1" pos="0 0 0" axis="0 0 1" limited="true" range="0 1.13" damping="0.1" />
+                                                <geom class="viz" mesh="r_arm_grip_1_link" />
+                                            </body>
+                                        </body>
+                                    </body>
+                                </body>
+                            </body>
+                        </body>
+                    </body>
+                </body>
+                <body name="head_y_link" pos="0 0 0.229">
+                    <inertial pos="0 0 0" mass="1" diaginertia="1 1 1" />
+                    <joint name="head_y" pos="0 0 0" axis="0 0 1" limited="true" range="-1.570796 1.570796" damping="0.1" />
+                    <!-- <geom size="0.035 0.05 0.05" type="box" rgba="1 0 0 0.1"/> -->
+                    <geom class="viz" mesh="head_y_link" />
+                    <body name="head_p_link" pos="0 -0.045 0.039">
+                        <inertial pos="0 0 0" mass="1" diaginertia="1 1 1" />
+                        <joint name="head_p" pos="0 0 0" axis="0 1 0" limited="true" range="-1.570796 1.570796" damping="0.1" />
+                        <!-- <geom size="0.065 0.075 0.075" pos="0.01 0.045 0.06" type="box" rgba="1 0 0 0.1"/> -->
+                        <geom class="viz" mesh="head_p_link" />
+                    </body>
+                </body>
+            </body>
+            <body name="l_leg_hip_y_link" pos="0 0.093 -0.018">
+                <inertial pos="0.012 0 -0.025" mass="0.243" diaginertia="1 1 1" />
+                <joint name="l_leg_hip_y" pos="0 0 0" axis="0 0 -1" limited="true" range="-1.4137164 1.4137164" damping="0.1" />
+                <!-- <geom size="0.085 0.035 0.05" pos="-0.01 0 -0.05" type="box" rgba="1 0 0 0.1"/> -->
+                <geom class="viz" mesh="l_leg_hip_y_link" />
+                <body name="l_leg_hip_r_link" pos="0.057 0 -0.075">
+                    <inertial pos="-0.068 0 0" mass="1.045" diaginertia="1 1 1" />
+                    <joint name="l_leg_hip_r" pos="0 0 0" axis="-1 0 0" limited="true" range="-0.6283184 0.9424776" damping="0.1" />
+                    <geom class="viz" mesh="l_leg_hip_r_link" />
+                    <body name="l_leg_hip_p_link" pos="-0.057 0.033 0">
+                        <inertial pos="0.022 -0.007 -0.168" mass="3.095" diaginertia="1 1 1" />
+                        <joint name="l_leg_hip_p" pos="0 0 0" axis="0 1 0" limited="true" range="-1.2566368 1.2566368" damping="0.1" />
+                        <!-- <geom size="0.055 0.08 0.165" pos="0 -0.005 -0.145" type="box" rgba="1 0 0 0.1"/> -->
+                        <geom class="viz" mesh="l_leg_hip_p_link" />
+                        <body name="l_leg_kn_p_link" pos="0 0.06 -0.3">
+                            <inertial pos="-0.002 -0.066 -0.183" mass="2.401" diaginertia="1 1 1" />
+                            <joint name="l_leg_kn_p" pos="0 0 0" axis="0 1 0" limited="true" range="-0.314592 2.199114" damping="0.1" />
+                            <!-- <geom size="0.055 0.08 0.165" pos="0.01 -0.065 -0.145" type="box" rgba="1 0 0 0.1"/> -->
+                            <geom class="viz" mesh="l_leg_kn_p_link" />
+                            <body name="l_leg_an_p_link" pos="0 -0.06 -0.3">
+                                <inertial pos="-0.011 -0.033 0" mass="1.045" diaginertia="1 1 1" />
+                                <joint name="l_leg_an_p" pos="0 0 0" axis="0 -1 0" limited="true" range="-1.4137164 1.4137164" damping="0.1" />
+                                <geom class="viz" mesh="l_leg_an_p_link" />
+                                <body name="l_leg_an_r_link" pos="0.057 -0.033 0">
+                                    <inertial pos="-0.0585162 0.00795031 -0.0939351" quat="0.989076 0.0824604 -0.121761 0.0101513" mass="1.912" diaginertia="2.00058 2.00058 2" />
+                                    <joint name="l_leg_an_r" pos="0 0 0" axis="1 0 0" limited="true" range="-1.570796 1.258368" damping="0.1" />
+                                    <geom class="viz" mesh="l_leg_an_r_link" />
+                                    <body name="l_leg_foot_link" pos="-0.057 0.0 -0.087">
+                                        <geom class="viz" mesh="l_leg_foot_link" />
+                                    </body>
+                                    <!-- <geom size="0.085 0.03 0.06" pos="-0.067 0 -0.02" type="box" rgba="1 0 0 0.1"/> -->
+                                    <!-- <geom size="0.11 0.075 0.015" pos="-0.057 0.014 -0.0995" type="box" rgba="1 0 0 0.1"/> -->
+                                </body>
+                            </body>
+                        </body>
+                    </body>
+                </body>
+            </body>
+            <body name="r_leg_hip_y_link" pos="0 -0.093 -0.018">
+                <inertial pos="-0.012 0 -0.025" mass="0.243" diaginertia="1 1 1" />
+                <joint name="r_leg_hip_y" pos="0 0 0" axis="0 0 -1" limited="true" range="-1.4137164 1.4137164" damping="0.1" />
+                <!-- <geom size="0.085 0.035 0.05" pos="-0.01 0 -0.05" type="box" rgba="1 0 0 0.1"/> -->
+                <geom class="viz" mesh="r_leg_hip_y_link" />
+                <body name="r_leg_hip_r_link" pos="0.057 0 -0.075">
+                    <inertial pos="-0.068 0 0" mass="1.045" diaginertia="1 1 1" />
+                    <joint name="r_leg_hip_r" pos="0 0 0" axis="-1 0 0" limited="true" range="-0.9424776 0.6283184" damping="0.1" />
+                    <geom class="viz" mesh="r_leg_hip_r_link" />
+                    <body name="r_leg_hip_p_link" pos="-0.057 -0.033 0">
+                        <inertial pos="0.022 0.007 -0.168" mass="3.095" diaginertia="1 1 1" />
+                        <joint name="r_leg_hip_p" pos="0 0 0" axis="0 -1 0" limited="true" range="-1.2566368 1.2566368" damping="0.1" />
+                        <!-- <geom size="0.055 0.08 0.165" pos="0 0.005 -0.145" type="box" rgba="1 0 0 0.1"/> -->
+                        <geom class="viz" mesh="r_leg_hip_p_link" />
+                        <body name="r_leg_kn_p_link" pos="0 -0.06 -0.3">
+                            <inertial pos="-0.002 0.066 -0.183" mass="2.401" diaginertia="1 1 1" />
+                            <joint name="r_leg_kn_p" pos="0 0 0" axis="0 -1 0" limited="true" range="-2.1991144 0.3141592" damping="0.1" />
+                            <!-- <geom size="0.055 0.08 0.165" pos="0.01 0.065 -0.145" type="box" rgba="1 0 0 0.1"/> -->
+                            <geom class="viz" mesh="r_leg_kn_p_link" />
+                            <body name="r_leg_an_p_link" pos="0 0.06 -0.3">
+                                <inertial pos="-0.011 0.033 0" mass="1.045" diaginertia="1 1 1" />
+                                <joint name="r_leg_an_p" pos="0 0 0" axis="0 1 0" limited="true" range="-1.4137164 1.4137164" damping="0.1" />
+                                <geom class="viz" mesh="r_leg_an_p_link" />
+                                <body name="r_leg_an_r_link" pos="0.057 0.033 0">
+                                    <inertial pos="-0.0585162 -0.00795031 -0.0939351" quat="0.989076 -0.0824604 -0.121761 -0.0101513" mass="1.912" diaginertia="2.00058 2.00058 2" />
+                                    <joint name="r_leg_an_r" pos="0 0 0" axis="1 0 0" limited="true" range="-1.4137164 1.4137164" damping="0.1" />
+                                    <geom class="viz" mesh="r_leg_an_r_link" />
+                                    <body name="r_leg_foot_link" pos="-0.057 0.0 -0.087">
+                                        <geom class="viz" mesh="r_leg_foot_link" />
+                                    </body>
+                                    <!-- <geom size="0.085 0.03 0.06" pos="-0.067 0 -0.02" type="box" /> -->
+                                    <!-- <geom size="0.11 0.075 0.015" pos="-0.057 -0.014 -0.0995" type="box" rgba="1 0 0 0.1"/> -->
+                                </body>
+                            </body>
+                        </body>
+                    </body>
+                </body>
+            </body>
+        </body>
+    </worldbody>
+
+    <contact>
+        <exclude body1="pelvis_link" body2="chest_link"/>
+        <exclude body1="l_arm_wr_p_link" body2="l_arm_grip_link"/>
+        <exclude body1="l_arm_wr_p_link" body2="l_arm_grip_1_link"/>
+        <exclude body1="l_arm_grip_link" body2="l_arm_grip_1_link"/>
+
+        <exclude body1="r_arm_wr_p_link" body2="r_arm_grip_link"/>
+        <exclude body1="r_arm_wr_p_link" body2="r_arm_grip_1_link"/>
+        <exclude body1="r_arm_grip_link" body2="r_arm_grip_1_link"/>
+        
+        <exclude body1="chest_link" body2="l_arm_sh_p1_link"/>
+        <exclude body1="l_arm_sh_p1_link" body2="l_arm_sh_r_link"/>
+        <exclude body1="l_arm_sh_r_link" body2="l_arm_sh_p2_link"/>
+        <exclude body1="l_arm_sh_p1_link" body2="l_arm_sh_p2_link"/>
+        <exclude body1="l_arm_sh_p2_link" body2="l_arm_el_y_link"/>
+        <exclude body1="l_arm_el_y_link" body2="l_arm_wr_r_link"/>
+        <exclude body1="l_arm_wr_r_link" body2="l_arm_wr_y_link"/>
+        <exclude body1="l_arm_wr_y_link" body2="l_arm_wr_p_link"/>
+        <!-- <exclude body1="l_arm_wr_p_link" body2="l_arm_grip_link"/>
+        <exclude body1="l_arm_wr_p_link" body2="l_arm_grip_1_link"/> -->
+
+        <exclude body1="chest_link" body2="r_arm_sh_p1_link"/>
+        <exclude body1="r_arm_sh_p1_link" body2="r_arm_sh_r_link"/>
+        <exclude body1="r_arm_sh_r_link" body2="r_arm_sh_p2_link"/>
+        <exclude body1="r_arm_sh_p1_link" body2="r_arm_sh_p2_link"/>
+        <exclude body1="r_arm_sh_p2_link" body2="r_arm_el_y_link"/>
+        <exclude body1="r_arm_el_y_link" body2="r_arm_wr_r_link"/>
+        <exclude body1="r_arm_wr_r_link" body2="r_arm_wr_y_link"/>
+        <exclude body1="r_arm_wr_y_link" body2="r_arm_wr_p_link"/>
+        <!-- <exclude body1="r_arm_wr_p_link" body2="r_arm_grip_link"/>
+        <exclude body1="r_arm_wr_p_link" body2="r_arm_grip_1_link"/> -->
+
+
+        <exclude body1="pelvis_link" body2="l_leg_hip_y_link"/>
+        <!-- <exclude body1="l_leg_hip_y_link" body2="l_leg_hip_r_link"/> -->
+        <exclude body1="l_leg_hip_y_link" body2="l_leg_hip_p_link"/>
+        <!-- <exclude body1="l_leg_hip_r_link" body2="l_leg_hip_p_link"/> -->
+        <!-- <exclude body1="l_leg_hip_p_link" body2="l_leg_kn_p_link"/> -->
+        <!-- <exclude body1="l_leg_kn_p_link" body2="l_leg_an_p_link"/> -->
+        <exclude body1="l_leg_kn_p_link" body2="l_leg_an_r_link"/>
+        <!-- <exclude body1="l_leg_an_p_link" body2="l_leg_an_r_link"/> -->
+        <!-- <exclude body1="l_leg_an_r_link" body2="l_leg_foot_link"/> -->
+
+        <exclude body1="pelvis_link" body2="r_leg_hip_y_link"/>
+        <!-- <exclude body1="r_leg_hip_y_link" body2="r_leg_hip_r_link"/> -->
+        <exclude body1="r_leg_hip_y_link" body2="r_leg_hip_p_link"/>
+        <!-- <exclude body1="r_leg_hip_r_link" body2="r_leg_hip_p_link"/> -->
+        <!-- <exclude body1="r_leg_hip_p_link" body2="r_leg_kn_p_link"/> -->
+        <!-- <exclude body1="r_leg_kn_p_link" body2="r_leg_an_p_link"/> -->
+        <exclude body1="r_leg_kn_p_link" body2="r_leg_an_r_link"/>
+        <!-- <exclude body1="r_leg_an_p_link" body2="r_leg_an_r_link"/> -->
+        <!-- <exclude body1="r_leg_an_r_link" body2="r_leg_foot_link"/> -->
+
+    </contact>
+
+    <actuator>
+        <motor ctrllimited="true" ctrlrange="-80.0 80.0" name="torso_y_actuator"      joint="torso_y" />
+
+        <motor ctrllimited="true" ctrlrange="-80.0 80.0" name="l_arm_sh_p1_actuator"  joint="l_arm_sh_p1" />
+		<motor ctrllimited="true" ctrlrange="-80.0 80.0" name="l_arm_sh_r_actuator"   joint="l_arm_sh_r" />
+		<motor ctrllimited="true" ctrlrange="-80.0 80.0" name="l_arm_sh_p2_actuator"  joint="l_arm_sh_p2" />
+        <motor ctrllimited="true" ctrlrange="-80.0 80.0" name="l_arm_el_y_actuator"   joint="l_arm_el_y" />
+		<motor ctrllimited="true" ctrlrange="-80.0 80.0" name="l_arm_wr_r_actuator"   joint="l_arm_wr_r" />
+		<motor ctrllimited="true" ctrlrange="-80.0 80.0" name="l_arm_wr_y_actuator"   joint="l_arm_wr_y" />
+        <motor ctrllimited="true" ctrlrange="-80.0 80.0" name="l_arm_wr_p_actuator"   joint="l_arm_wr_p" />
+        <motor ctrllimited="true" ctrlrange="-80.0 80.0" name="l_arm_grip_actuator"   joint="l_arm_grip" /> 
+        <motor ctrllimited="true" ctrlrange="-80.0 80.0" name="l_arm_grip_1_actuator"   joint="l_arm_grip_1" /> 
+
+		<motor ctrllimited="true" ctrlrange="-80.0 80.0" name="r_arm_sh_p1_actuator"  joint="r_arm_sh_p1" />
+		<motor ctrllimited="true" ctrlrange="-80.0 80.0" name="r_arm_sh_r_actuator"   joint="r_arm_sh_r" />
+		<motor ctrllimited="true" ctrlrange="-80.0 80.0" name="r_arm_sh_p2_actuator"  joint="r_arm_sh_p2" />
+		<motor ctrllimited="true" ctrlrange="-80.0 80.0" name="r_arm_el_y_actuator"   joint="r_arm_el_y" />
+		<motor ctrllimited="true" ctrlrange="-80.0 80.0" name="r_arm_wr_r_actuator"   joint="r_arm_wr_r" />
+		<motor ctrllimited="true" ctrlrange="-80.0 80.0" name="r_arm_wr_y_actuator"   joint="r_arm_wr_y" />
+        <motor ctrllimited="true" ctrlrange="-80.0 80.0" name="r_arm_wr_p_actuator"   joint="r_arm_wr_p" />
+        <motor ctrllimited="true" ctrlrange="-80.0 80.0" name="r_arm_grip_actuator"   joint="r_arm_grip" /> 
+        <motor ctrllimited="true" ctrlrange="-80.0 80.0" name="r_arm_grip_1_actuator" joint="r_arm_grip_1" /> 
+
+		<motor ctrllimited="true" ctrlrange="-80.0 80.0" name="l_leg_hip_y_actuator"  joint="l_leg_hip_y" />
+		<motor ctrllimited="true" ctrlrange="-80.0 80.0" name="l_leg_hip_r_actuator"  joint="l_leg_hip_r" />
+		<motor ctrllimited="true" ctrlrange="-80.0 80.0" name="l_leg_hip_p_actuator"  joint="l_leg_hip_p" />
+		<motor ctrllimited="true" ctrlrange="-80.0 80.0" name="l_leg_kn_p_actuator"   joint="l_leg_kn_p" />
+		<motor ctrllimited="true" ctrlrange="-80.0 80.0" name="l_leg_an_p_actuator"   joint="l_leg_an_p" />
+		<motor ctrllimited="true" ctrlrange="-80.0 80.0" name="l_leg_an_r_actuator"   joint="l_leg_an_r" />
+
+		<motor ctrllimited="true" ctrlrange="-80.0 80.0" name="r_leg_hip_y_actuator"  joint="r_leg_hip_y" />
+		<motor ctrllimited="true" ctrlrange="-80.0 80.0" name="r_leg_hip_r_actuator"  joint="r_leg_hip_r" />
+		<motor ctrllimited="true" ctrlrange="-80.0 80.0" name="r_leg_hip_p_actuator"  joint="r_leg_hip_p" />
+		<motor ctrllimited="true" ctrlrange="-80.0 80.0" name="r_leg_kn_p_actuator"   joint="r_leg_kn_p" />
+		<motor ctrllimited="true" ctrlrange="-80.0 80.0" name="r_leg_an_p_actuator"   joint="r_leg_an_p" />
+		<motor ctrllimited="true" ctrlrange="-80.0 80.0" name="r_leg_an_r_actuator"   joint="r_leg_an_r" />
+
+        <motor ctrllimited="true" ctrlrange="-80.0 80.0" name="head_y_actuator"       joint="head_y" />
+        <motor ctrllimited="true" ctrlrange="-80.0 80.0" name="head_p_actuator"       joint="head_p" />
+
+    </actuator>
+</mujoco>
